@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정부24</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #top_1{
+            height: 33px;
+            padding: 4px;
+            margin-left: 14.5rem;
+            letter-spacing: -1px;
+            font-weight: bold;
+        }
+        #eg_logo{
+            color: rgb(244, 195, 33);
+            font-size: 21px;
+            font-weight:bolder;
+        }
+        #top_2{
+            color: #fff;
+            background-color: #033075;
+            padding-top: 7px;
+            padding-bottom: 7px;
+            padding-right: 0px;
+        }
+        #top_2_left{
+            margin-left: 14.7rem;
+            letter-spacing: -1px;
+        }      
+        #top_2_left a:hover{
+            text-decoration-line: underline;
+            text-decoration-color: #fff; 
+        }
+        #top_2 div a{
+            text-decoration-line: none;
+            color: #fff;
+            letter-spacing: -1px;
+        }
+        #top_2 div p a:hover{
+            text-decoration-line: underline;
+            text-decoration-color: #fff;
+        }
+        #top_2::after{
+            clear: both;
+            display: block;
+            content: "";
+        }
+        .sc_pm{
+            text-decoration-line: none;
+            font-size: 2px;
+            border-style: solid;
+            border-width: 4px 4px;
+            border-color: rgb(205, 229, 239);
+            background-color: rgb(205, 229, 239);
+            vertical-align: middle;
+            
+        }
+        #sc_per{
+            text-decoration-line: none;
+            margin-left: -6px;
+            margin-right: -6px;
+            border-style: solid;
+            border-width: 0.05em 10px;
+            border-color: rgb(97, 127, 156);
+            background-color: rgb(97, 127, 156);
+            vertical-align: middle;
+        }
+        #sc_per:hover{
+            text-decoration-line: underline;
+            text-decoration-color: #fff;
+        }
+        .border_sep{
+            padding-right: 0.7rem;
+            border-right: 0.5px solid gray;
+            margin-right: 0.3rem;
+        }
+        #border_sep a:hover{
+            text-decoration-line: underline;
+            text-decoration-color: #fff;
+        }
+        #sep_border{
+            padding-left: 0.5rem;
+            border-left: 1px solid gray;
+            margin-left: 0.5rem;
+        }
+        #sep_border:hover{
+            text-decoration-line: underline;
+            text-decoration-color: #fff;
+        }
+        #menu{
+            display: flex;
+            list-style: none;
+            padding: 0px;
+            margin: 0px;
+            height: 80px;
+            justify-content: space-evenly;
+            align-items: center;
+            box-shadow: 0px 5px 20px -10px #033075;
+        }
+        #menu> #menu_items> a{
+            text-decoration-line: none;
+            color: black;
+            font-size: 23px;
+            font-weight: bold;
+            padding: 2rem;
+            margin-right: -13px;
+        }
+        #menu> #menu_items> a:hover{
+            color: rgb(33, 116, 232);
+            text-decoration-line: underline;
+            text-decoration-color: rgb(33, 116, 232);
+            text-underline-offset: 23px;
+            text-decoration-thickness: 7px;
+        }
+        #menu::after{
+            clear: both;
+            display:block;
+            content: "";
+        }
+        #menu_img{
+            color: #fff;
+            font-weight: bold;
+            font-size: 17px;
+            text-align: center;
+            margin-left: 5rem;
+            margin-right: 5rem;
+            text-decoration-line: none;
+            border-width: 10px 20px 12px;
+            border-style: solid;
+            border-color: #eb193a; 
+            background-color: #eb193a;
+            border-radius: 50px;
+        }
+        #first_v:hover{
+            text-decoration-line: underline;
+            text-decoration-color: #fff;
+        }
+        #instructions{
+            border: 1px solid #000;
+        }
+
+        /*main_2*/
+        #Services{
+            background-color: #F5F7Fa;
+            height: 305px;
+        }
+        #Services div{
+            margin-left: 13rem;
+            margin-right: 13rem;
+            display: flex;
+        }
+        #ser_top{
+            padding-top: 2%;
+            margin-bottom: -1.5%;
+            display: flex;
+            justify-content: space-between;
+            width: 85rem;
+        }
+        #ser_top p{
+            padding-left: -1%;
+            font-size: 20px;
+            letter-spacing: -2px;
+            font-weight: 900;
+            font-family: sans-serif;
+        }
+        #ser_top a{
+            margin-right: -6.5%;
+            letter-spacing: -1px;
+            font-weight: bold;
+            color: #666666;
+            text-decoration-line: none;
+        }
+        #ser_top a:hover{
+            text-decoration-line: underline;
+            text-decoration-color: #666666;
+        }
+        #bracket{
+            transform: scaleX(-1);
+        }
+        #ser_middle{
+            display: flex;
+            justify-content: space-around;
+        }
+        #ser_middle img{
+            margin-top: 7%;
+            width: 50px;
+            height: 30px;
+            object-fit: cover;
+        }
+        #ser_middle a{
+            margin-top: 3%;
+            border-radius: 20px;
+            text-decoration-line: none;
+            color: #000;
+            text-align: center;
+            background-color: #fff;
+            height: 160px;
+            width: 150px
+        }
+        #ser_middle a span{
+            color: #fff;
+            border-radius: 50%;
+            font-size: 15px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 100px;
+        }
+        #ser_middle > a > #cir_pink{
+            padding: 9% 6%;
+            color: #fff;
+            background-color: #FF3388;
+            border-color: #FF3388;
+        }
+        #ser_middle > a> .cir_green{
+            padding: 9% 6%;
+            color: #fff;
+            background-color: #009973;
+            border-radius: 100px;
+        }
+        #ser_middle >a> #cir_purple{
+            padding: 9% 6%;
+            color: #fff;
+            background-color: #6839E9;
+            border-radius: 100px;
+        }
+        #ser_middle > #bor_pink:hover{
+            border: solid #FF3388;
+            margin-right: -0.5%;
+            margin-bottom: -0.5%;
+        }
+        #ser_middle > .bor_green:hover{
+            border: solid #009973;
+            margin-right: -0.5%;
+            margin-bottom: -0.5%;
+        }
+        #ser_middle > #bor_purple:hover{
+            border: solid #6839E9;
+            margin-right: -0.5%;
+            margin-bottom: -0.5%;
+        }
+        #ser_middle a > .ser_text{
+            margin-top: -10%;
+            margin-bottom: 10%;
+        }
+        #ser_middle a > .ser_text:hover{
+            text-decoration-line: underline;
+            font-weight: bold;
+        }
+        #ser_bottom{
+            display: flex;
+            position: absolute;
+            transform: translate(50rem, 2rem);
+        }
+        #ser_bottom > #marker_1{
+            width: 10px;
+            border: solid #3382E9;
+            border-radius: 20px;
+            margin-right: 10px;
+        }
+        #ser_bottom > .marker_2{
+            width: 1px;
+            border: solid #C7CFDD;
+            border-radius: 200px;
+        }
+
+        /*footer_주현님*/
+        #private{
+            padding: 10px 0;
+            background-color: #f6f6f6;
+            border-top: 1px solid #e8e8e8;
+            border-bottom: 1px solid #e8e8e8;
+        }
+
+        #policy{
+            color: #003964;
+            font-weight: bold;
+            font-size: 15px;
+            width: 112px;
+            height: 19.3;
+            padding: 25px;
+
+        }
+
+        #SNS{
+            padding-left: 750px;
+            width: 200px;
+            height: 36px;
+        }
+
+        #fm{
+            background-color: #f6f6f6;
+            /* border: black, 30px solid;
+            border-style: solid; */
+            box-sizing: border-box;
+            font-size: 16px;
+            font-style: Malgun Gothic;
+        }
+
+        #inner{
+            justify-content: space-between;
+            padding-top: 20px;
+            display: flex;
+            margin: 0px 21.6px;
+            padding: 20px 0px 0px;
+        }
+
+        #bi > h5 > img{
+            width: 110px;
+            height: 36px;
+            transform: translateY(-5px);
+        }
+
+        #content > strong{
+            margin: 0px 0px 5px;
+        }
+
+        #innum1{
+            font-size: 16px;
+            color: #666;
+            font-weight: 700;
+            line-height: 1.75;
+        }
+
+        #innum2{
+            position: relative;
+            font-size: 16px;
+            color: #666;
+            font-weight: 350;
+            line-height: 1.55;
+            word-break: keep-all;
+        }
+
+        #link{
+            box-sizing: border-box;
+            font-size: 16px;
+            font-style: Malgun Gothic;
+            color: #333333;
+        }
+
+        #content > ul > type1{
+            font-size: 17px;
+            font-weight: bold;
+        }
+
+        #content-bold{
+            font-weight: bold;
+            font-size: 17;
+        }
+
+        #zerotwo {
+            color: red;
+            font-size: 15px;
+        }
+
+
+        #copyright{
+            background-color: #f6f6f6;
+            border: black, 30px solid;
+            padding: 30px;
+            position: relative;
+            color: #838383;
+        }
+
+        #copyspan > img{
+            content: "";
+            display: inline-block;
+            width: 60px;
+            height: 42px;
+        }
+
+        #copyspan{
+            font-size: 14px;
+            font-style: Malgun Gothic; 
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 20px;
+            letter-spacing: 0;
+        }
+
+        /* 임호령 코드 */
+        /* search code */
+        #Instructions{
+            padding: 0 80px 0 110px;
+            border: 1px solid red;
+            width: 99vw;
+            height: 62vh;
+        }
+        #intstructions_left{
+            margin: 1.6% 2% 0 0;
+            padding: 0 0 0 0;
+            display: inline-block;
+            width: 100%;
+        }
+        
+
+        #instructions_left_top{
+            display: block;
+            width: 845px;
+        }
+        #instructions_left_bottom{
+            width: 840px;
+            margin: 3% 0 0 0;
+            border: 2px solid white;
+        }
+        #instructions_bottom_left{
+            display: inline-block;
+            margin: 0 0 0 2%;
+        }
+        #instructions_bottom_left div{
+            font-weight: bold;
+            display: inline-block;
+            margin: 5% 0 0 0;
+        }
+        #instructions_bottom_left button{
+            margin: 0;
+        }
+        
+        #frequent_search{
+            text-decoration: none;
+            color: black;
+            text-decoration-line: underline;
+            text-underline-offset : 8px;
+            text-decoration-thickness: 3px;
+        }
+
+        a > #magnifier{
+            position: absolute;
+            margin: 20px 0 0 19%;
+            width: 25px;
+            height: auto;
+        }
+
+        #instructions_bottom_right{
+            display: inline-block;
+            margin: 0 0 0 5%;
+        }
+
+        #search_box{
+            width: 500px;
+            height: 35px;
+            font-size: 1rem;
+            border: 2px solid rgb(1, 132, 255);
+            border-radius: 12px;
+            padding: 15px;
+        }
+
+        /* login code */
+        #login{
+            float: right;
+            width: 380px;
+            height: 395px;
+            border: 1px solid #ebe5e5;
+            border-radius: 14px;
+            margin: 20px 17% 0 2%;
+            box-shadow: 15px 15px 15px rgb(243, 242, 242);
+            
+        }
+        #login_box{
+            margin : 0 auto;
+            padding-top: 38%;
+            width: 380px;
+            height: 236px;
+        }
+        #login_info_top{
+            width: 100%;
+            font-size: 1.1rem;
+            font-weight: 550;
+            margin: 0 0 7% 0;
+        }
+        #login_info_top p{
+            text-align: center;
+            font-style: Malgun Gothic;
+            margin: 2% 0 8% 0;
+        }
+        #login_info_top a{
+
+            width: 350px;
+            height: 36px;
+            border: none;
+            border-radius: 8px;
+            background-color: #3382E9;
+            display: inline-block;
+            font-size: 0.9rem;
+            color: white;
+            text-decoration: none;
+            text-decoration-line: none;
+            text-align:center;
+            padding: 5% 0 0 0;
+            margin: 0 0 2% 4%;
+        }
+
+
+        #login_info_bottom{
+            font-size: 0.8rem;
+        }
+        #login_info_bottom a{
+            color: rgb(94, 94, 94);
+            text-decoration: none;
+            text-decoration-line: none;
+        }
+        #login_bottom_left{
+            width: 70%;
+            display: inline-block;
+            margin: 0 10% 0 0;
+        }
+
+        #login_bottom_left span{
+            display: inline-block;
+            margin-left: 0 0 0 0; 
+        }
+        #login_bottom_left a{
+            
+            color: rgb(94, 94, 94);
+            text-decoration: none;
+            text-decoration-line: none;
+            text-align: center;
+            font-style: Malgun Gothic;
+            margin: 0 0 0 6%;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div id="top_1">
+            <span id="eg_logo">EG</span> 이 누리집은 대한민국 공식 전자정부 누리집입니다.
+        </div>
+        <div id="top_2" style="font-weight: bold;">
+            <div id="top_2_left" style="float: left;">
+                <a class="border_sep">For&nbsp;Foreigners ▼</a>
+                <a href="https://kids.gov.kr/main.ds">어린이</a>
+            </div>
+            <div class="top_2_right" style="float: right; margin-right:15rem;">
+                <span id="border_sep">
+                   <a class="border_sep" href="https://www.gov.kr/nlogin/?Mcode=10003">로그인</a>
+                    <a class="border_sep" href="https://www.gov.kr/nlogin/usr?Mcode=10004">회원가입</a>
+                    <a class="border_sep" href="https://www.gov.kr/portal/govSumry?Mcode=11005">정부24소개</a>
+                    <a class="border_sep" href="https://www.gov.kr/portal/siteMap?Mcode=11274">누리집 안내지도</a>    
+                </span>    
+                <span>화면크기</span>
+                <a class="sc_pm" href="#">➖</a>
+                <a id="sc_per" href="#" style="color:#fff">100%</a>
+                <a class="sc_pm" href="#">✖️</a>
+            </div>
+        </div>
+    </header>
+    <nav id="top_menu">
+        <ul id="menu">  
+            <li style="margin-left: 10rem;"><a href="https://www.gov.kr/portal/main#"><img src="https://www.gov.kr/2019/lib/image/img-gov-logo.png"/></a></li>
+            <li id=menu_items>
+                <a href="#">서비스</a>
+                <a href="#">보조금24</a>
+                <a href="#">정책정보</a>
+                <a href="#">고객센터</a>
+                <a href="#">MyGOV</a>
+            </li>
+            <li ><a id="menu_img" href="#">🏷️<span id="first_v">처음오셨나요?</span>&nbsp;&nbsp;&nbsp;&nbsp;></a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- 소개 창 코드 -->
+        <section id="Instructions">
+            <div id="intstructions_left" style="width:45%;">
+                <div id="instructions_left_top">
+                    <a href="https://blog.naver.com/korea_gov/222858073207">
+                        <img src="https://www.gov.kr/images/userUploads/int/2022/10/covid_PC_renew.png" alt="생활지원비_이미지">
+                    </a>
+                </div>
+                <div id="instructions_left_bottom">
+                    <div id="instructions_bottom_left">
+                        <div>자주찾는 검색</div>
+                        <div>
+                            <a href="" id="frequent_search" style="color:black;">
+                                <span style="color:blue;">1</span>
+                                가족관계증명서
+                            </a>
+                        </div>
+                    </div>
+                    <div id="instructions_bottom_right">
+                        <form action="#">
+                            <a href="#">
+                                <img id="magnifier" src="https://cdn.pixabay.com/photo/2018/04/18/18/56/look-for-3331255_960_720.png" alt="검색">
+                            </a>
+                            <input id="search_box" type="text" name="search" placeholder="찾으시는 서비스를 입력하세요">
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 로그인 code -->
+            <div id="login">
+                <div id="login_box">
+                    <div id="login_info_top">
+                        <p>내게 필요한 민원/생활/혜택<br> 정보를 확인하세요.</p>
+                        <a href="#">로그인</a>
+                    </div>
+                    <div id="login_info_bottom">
+                        <div id="login_bottom_left">
+                            <a href="">아이디찾기</a>
+                            <span>|</span>
+                            <a href="">비밀번호찾기</a>
+                        </div>
+                        <a href="#">회원가입</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section id="Services">
+            <div id="ser_top">
+                <p>자주찾는 서비스(<span style="color: #3382E9;">21</span>)</p>
+                <a href="https://www.gov.kr/portal/frqfindsvc">서비스 전체보기</a>
+            </div>
+            <div id="ser_middle">
+                <img src="https://icons.veryicon.com/png/o/miscellaneous/commonly-used-icon-1/angle-bracket-left.png"/>
+                <a id="bor_pink" href="https://www.gov.kr/portal/rcvfvrSvc/dtlEx/179038700002">
+                    <span id="cir_pink">신청</span>
+                    <p class="ser_text">코로나19<br>생활지원비</p>
+                </a>
+                <a class="bor_green" href="https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=13100000015&HighCtgCD=A01010001&tp_seq=01&Mcode=10200">
+                    <span class="cir_green">발급<br></span>
+                    <p class="ser_text">토지(임야)<br>대장</p>
+                </a>
+                <a class="bor_green" href="https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=13100000015&HighCtgCD=A01010001&tp_seq=01&Mcode=10200">
+                    <span class="cir_green">발급<br></span>
+                    <p class="ser_text">주민등록등본<br>(초본)</p>
+                </a>
+                <a class="bor_green" href="https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=15000000334&HighCtgCD=A03007&tp_seq=02&Mcode=10204">
+                    <span class="cir_green">발급<br></span>
+                    <p class="ser_text">자동차<br>등록원부</p>
+                </a>
+                <a class="bor_green" href="https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=15000000098&HighCtgCD=A02004002&tp_seq=01&Mcode=10205">
+                    <span class="cir_green">발급<br></span>
+                    <p class="ser_text">건축물대장</p>
+                </a>
+                <a id="bor_purple" href="https://efamily.scourt.go.kr/index.jsp">
+                    <span id="cir_purple">조회<br></span>
+                    <p class="ser_text">가족관계<br>증명서</p>
+                </a>
+                <a class="bor_green" href="https://www.gov.kr/mw/AA020InfoCappView.do?HighCtgCD=A05004&CappBizCD=14600000398&tp_seq=99">
+                    <span class="cir_green">발급<br></span>
+                    <p class="ser_text">코로나19<br>예방접종 증명</p>
+                </a>
+                <a class="bor_green" href="https://www.gov.kr/portal/service/serviceInfo/179038700001">
+                    <span class="cir_green">발급<br></span>
+                    <p class="ser_text">격리통지서</p>
+                </a>
+                <img id="bracket" src="https://icons.veryicon.com/png/o/miscellaneous/commonly-used-icon-1/angle-bracket-left.png"/>
+            </div>
+            <div id="ser_bottom">
+                <span id="marker_1"></span>
+                <span class="marker_2" style="margin-right: 10px;"></span>
+                <span class="marker_2"></span>
+            </div>
+        </section>
+
+        <section id="Onestop">
+            <div>
+                <div>원스톱 서비스</div>
+                <div>중소벤처24~ | 국가보훈처~</div>
+            </div>
+            <div>
+                전입신고+ ~ 노후생활
+            </div>
+            <div>Img</div>
+            <aside id="notice">
+                <div>공지사항 +</div>
+                <article>articles...</article>
+            </aside>
+        </section>
+        <section id="Subsidy">
+            <section id="보조금24">
+                <div>
+                    <div>Img 보조금24</div>
+                    <div>나와 가족이~</div>
+                    <div>로그인하고 확인하기</div>
+                </div>
+                <div>이용방법은~</div>
+                <div>정부가 제공하는~</div>
+                <div>간편하게 찾기</div>
+            </section>
+            <aside id="Table">
+                <div>마이데이터</div>
+                <div>국민비서구삐</div>
+                <div>전자문서지갑</div>
+                <div>돌봄시설위치</div>
+            </aside>
+        </section>
+        <section id="Media">
+            <section id="video">
+                <div>새로운영상 +</div>
+                <div>Video</div>
+            </section>
+            <section id="articles">
+                <div>정책뉴스 연구보고서 간행물 정책자료 +</div>
+                <article>articles...</article>
+            </section>
+            <section id="contest">
+                Img
+            </section>
+        </section>
+        <section id="Channel">
+            <div>국민소통채널</div>
+            <div>
+                Img Img Img Img Img
+            </div>
+        </section>
+        <section id="Policy_SNS">
+            <section id="policy">
+                개인정보처리방침 이용약관
+            </section>
+            <section id="sns">
+                블로그 유튜브 페이스북 카카오스토리 트위터
+            </section>
+        </section>
+    </main>
+    <footer>
+        <div id="private">
+            <a href="https://www.gov.kr/portal/privacy?Mcode=11230" id="policy">
+                개인정보처리방침
+            </a>
+            <a href="https://www.gov.kr/portal/useStplat?Mcode=11229">
+                이용약관
+            </a>
+            <a>
+                <img src="https://www.gov.kr/2019/lib/image/logo_sns.png" alt="SNS" id="SNS">
+            </a>
+        </div>
+        <div id="fm">
+            <div id="inner">
+                <div id="bi">
+                    <h5><img src="https://www.gov.kr/2019/lib/image/logo_footer.png" alt="ft정부24"></h5>
+                </div>
+                <div id="content">
+                    <strong>정부24 콜센터</strong>
+                    <p id="content-bold">1588-2188</p>
+                    <p>
+                        <span id="content-bold">02-3703-2500</span> (<span id="zerotwo">지역번호 '02'</span>를 확인하세요.)<br>
+                        <span id="innum2">(09:00 ~ 18:00 평일)</span>
+                    </>
+                    <div id>
+                        <p id="innum1">내선번호</p>
+                        <div>
+                            <p><span id="innum1">[1번]</span> <span id="innum2">주민등록초본, 건축물대장, 토지대장 문의</span></p>
+                            <p><span id="innum1">[2번]</span> <span id="innum2">민원신청 및 발급문의</span></p>
+                            <p><span id="innum1">[3번]</span> <span id="innum2">보조금24 조회, 신청문의</span></p>
+                            <p><span id="innum1">[4번]</span> <span id="innum2">회원가입 및 로그인 문의</span></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <strong>정부민원안내콜센터</strong>
+                    <p>국번없이 110</p>
+                    <span id="innum2">(무료,365일 24시간)</span>
+                </div>
+                <div id="link">
+                    <a>찾아오시는길                 ></a><br>
+                    <a>고객센터                     ></a><br>
+                    <a>누리집 개선의견수렴          ></a><br> 
+                    <a>공공서비스 활용(open API)    ></a><br> 
+                </div>
+            </div>
+        </div>
+        <div id="copyright">
+            <div>
+                <span id="copyspan">
+                Copyright © Ministry of the Interior and Safety. All Rights Reserved.
+                <img src="https://www.gov.kr/2019/lib/image/main/logo_wa.png"/>
+                </span>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

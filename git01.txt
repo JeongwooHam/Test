@@ -1,0 +1,130 @@
+<Git>
+    - 소스 코드 버전 관리 시스템
+
+    - 프로젝트 개발
+        v0.1 --- 서비스 중 --- 업데이트?
+        v0.2 --- 여러 기능
+                 feature 1 --- 개발완료
+                 feature 2 --- 개발완료 <--- 되돌려야 함
+                 feature 3 --- 개발중단
+        > v0.1 (product)
+          v0.2(dev) --- 기능마다(ver)
+          프로젝트 개발의 history
+
+    - 소스 코드 버전관리를 넘어 협업 시스템으로 활용
+        예) v0.2 --- feature1 (A)
+                 --- feature2 (B)
+                 --- feature3 (C) --- 동시에 진행
+
+                 --- feature4 (B)
+                 --- fixed feature2 (A)
+
+    - 병렬적 개발 가능
+    
+* conflict (충돌상황)
+    - 저장공간과 각 기능을 합병(merge)할 때 
+      충돌이 난 부분을 확인하여 충돌상황을 해결(resolve) 후 merge할 수 있도록 함
+
+* issue tracker
+    - 개발 간에 있었던 이슈(오류 해결, 오류 미해결)를 기록
+
+* CI/CD를 위한 저장소
+    - 지속적인 통합, 지속적인 배포
+    - Git에 코드를 올려두는 것만으로도 호스팅 가능
+    - 자동 테스트 기능, git push만으로도 자동 배포
+
+* Github
+    - Git을 웹호스팅(UI가 있도록) 하는 서비스
+    - 회원가입 > 프로필 > 내 개인저장소 > new repository
+
+* powershell 에러 해결
+    - windowpowershell 관리자 권한으로 실행
+    Set-ExecutionPolicy -Scope LocalMachine -ExecutionPolicy RemoteSigned -Force
+    입력 후 엔터
+    VSCODE 종료 후 재실행 
+
+* ToDo
+    1. 내가 버전 관리하고 싶은 프로젝트(폴더) 찾기 
+    2. 해당 폴더에 로컬 저장소(.git) 생성 (init. 최초 1회)
+    3. 로컬 저장소와 내가 생성한 repository(원격 저장소)의 주소 연결 (remote. 최초 1회)
+    4. 내가 로컬 저장소에 올리고 싶은 파일을 스테이징 (add. 최초 1회)
+    5. 내 로컬 저장소 환경에 파일 전송 (commit) > 원격 저장소 X. 로컬 저장소(.git)
+    +) push의 조건
+        - 현재 올리려는 저장소와 최신화되어 있어야 함 
+        - 원격 저장소에 있는 파일을 내 로컬 환경으로 다운로드 받을 필요O (pull)
+    6. 커밋에 이상이 없다면 커밋 내용을 정리하여 원격 저장소로 전송 (push. 4-6 반복적 실행)
+
+* git init
+    - 로컬 저장소 생성 (.git)
+    <주의사항>
+        - 터미널에서 내가 올리고 싶은 폴더 경로를 맞추고 다시 생성할 것
+        - 맞추지 않고 git init부터 하면 .git 파일 삭제 후 다시 해야 함
+        - cd [폴더경로]
+            - cd git2 (상대경로, 하위 폴더)
+            - cd C:/User/git2 (절대경로)
+            - cd .. (상위 폴더)
+    - .gitkeep: 빈 파일 올리기 위해 사용
+
+* git remote
+    : 원격 저장소 설정
+        1) git remote
+            - 현재 해당 로컬 저장소와 연결된 원격 저장소의 목록을 볼 수 있음
+        2) git remote add [원격저장소명] [원격저장소주소]  ---  실제로 [] 는 없는 것
+            예) git remote add origin https:/github.com/abcd/abcd
+            원격 저장소와 로컬 저장소 연결
+        3) git remote remove [원격저장소명] [원격저장소주소]
+            - 연결된 원격 저장소 삭제git g
+    - 변경 사항: 원격 저장소(git)에 없거나 변경 사항이 있는 경우(바뀐 부분이 있어 git repository에 올라갈 수 있을 때)
+
+* git add .
+    : 현재 원격 저장소에 올려져 있는 모든 파일을 스테이징
+    (.gitignore에 올라가있는 파일은 스테이징 하지 않음 - text file)
+  git add 파일명
+    : 내가 올리고 싶은 파일만 스테이징
+        예) git add intex.html
+
+* git commit
+    - 로컬 저장소에 내가 올리고 싶은 파일을 올리는 것
+    - commit을 하게 되면 일정의 해쉬(암호화 된) 코드를 받게 됨
+    - 향후 위의 코드를 사용하여 cherry pick 하거나 revert 할 수 있음
+
+    --amend
+        : 기존에 있던 git commit 내용과 현재 commit 내용을 합치는 option
+
+    예) git commit -m "head" -m "body" -m "footer"
+
+        git commit -m 'feat: login api' -m '로그인 api를 추가하였습니다.' -m '각주, 주석, 참조...'
+    -m: message
+
+* git cherry-pick hash_commit_number
+        예) A라는 기능을 위해 10개의 commit이 존재하는 경우
+            이 중 내가 적용하고 싶은 commit만 적용하고자 할 때
+            해당 commit만 선택하여 적용할 수 있도록 하는 명령어
+
+* git revert hash_commit_number
+    - 해당 commit으로 되돌리는 기능
+    - commit 내용이 꼬이게 되므로 사용하지 않는 것을 추천
+    - 마지막 commit 내용을 undo(되돌리기) 하기 위해 사용할 수 있음
+
+* git log
+    - 현재 git의 history와 git hash_commit_number 확인 가능
+
+* git push [원격저장소명] [브랜치명]
+    예) git push origin main
+        로컬 저장소의 commit 내용을 원격 저장소에 전송
+
+* git pull [원격저장소명] [브랜치명]
+    예) git pull origin main
+        원격 저장소의 내용과 현재 내 로컬 환경을 동기화
+    - refusing to merge unrelated histories
+        >> git pull origin main --rebase
+
+------------------------------------------------------------------------      
+* github 계정을 내 컴퓨터 자체에 연결
+    git config --global user.name "name"
+    git config --global user.email "email"
+
+    git config --list 를 통해 등록 확인 (q를 통해 나갈 수 있음)
+
+* Github Flow
+    

@@ -1,0 +1,26 @@
+<오늘 배울 내용>
+    1. git flow, branch 설명
+    2. organization
+        - branch > clone > fork > merge > pr > issue
+
+<branch>
+    : repository 생성. 분기를 나눌 수 있음
+
+    1. main(master): default branch
+    2. dev(release, test, v0.1): development branch
+
+    ---------------------------------항시
+
+    feat
+
+    fix
+
+    style
+
+    예) feat/login
+        style/event-screen
+        hotfix/sns-login
+
+    ---------------------------------일시적 > 완료 시 삭제
+
+<Semantic Commit Messages>
