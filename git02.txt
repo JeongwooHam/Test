@@ -24,3 +24,15 @@
     ---------------------------------일시적 > 완료 시 삭제
 
 <Semantic Commit Messages>
+https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716
+
+feat: 새로운 기능
+fix: 버그 수정
+docs: 문서 수정
+style: 레이아웃, 코드 스타일 수정
+refactor: 기능 개선
+test: 테스트 코드
+chore: 로직 외 코드 수정
+
+예) feat: 로그인 로직을 추가하였습니다.
+    style : 이벤트 스크린의 배너를 추가하였습니다.
