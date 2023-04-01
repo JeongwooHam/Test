@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Wick</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+
+        *{
+            padding: 0;
+            margin: 0;
+            background: no-repeat center fixed;
+            background-image:linear-gradient(to right,
+            rgba(20, 20, 20, 0.75)10%,
+            rgba(20, 20, 20, 0.5)50%,
+            rgba(20, 20, 20, 0)100%), url(../img/jw1.jpeg);
+            background-size: cover;
+            color: #fff;
+            font-family: 'Quicksand', sans-serif;
+            list-style: none;
+        }
+        
+        header{
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        #headerLeft img{
+            height: 50px;
+            width: 50px;
+            position: absolute;
+            left: 100px;
+            top: 20px
+        }
+
+        #headerMiddle{
+            font-size: 18px;
+            letter-spacing: 3px;
+            position: absolute;
+            top: 30px;
+            left: 15vw;
+            background-color: transparent;
+        } 
+
+        #headerMiddle a{
+            padding-right: 20px;
+        }
+
+        #headerRight{
+            position: absolute;
+            top: 30px;
+            right: 50px;
+        }
+
+        #home{
+            color: red;
+            font-weight: bold;
+        }
+
+        .wtor{
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .wtor:hover{
+            color: red;
+            font-weight: bold;
+        }
+        
+        main{
+            position: absolute;
+            top: 190px;
+            display: flex;
+            margin-left: 12vw;
+        }
+
+        #mainLeft{
+            display: flex;
+            flex-direction: column;
+        }
+
+        #jwLogo{
+            height: 110px;
+            width: 500px;
+            margin-bottom: 3%;
+        }
+
+        #chapter{
+            font-size: 26px;
+            letter-spacing: 2px;
+            margin-bottom: 3%;
+        }
+
+        #details{
+            width: 50vw;
+            margin-bottom: 12%;
+            font-size: 18px;
+        }
+
+        main ul{
+            display: flex;
+            margin-bottom: 100px;
+            font-size: 18px;
+        }
+        
+        main ul li{
+            margin-right: 40px;
+        }
+        main ul li span{
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        main div button{
+            width: 180px;
+            height: 40px;
+            border: 1px solid #fff;
+            border-radius: 24px;
+            font-size: 18px;
+            margin-right: 20px;
+        }
+
+        #buttons{
+            display: flex;
+        }
+
+        aside{
+            position: absolute;
+            left: 160%;
+            top: 50%;
+        }
+
+        aside > #text{
+            position: absolute;
+            background: none;
+            -webkit-transform: rotate(270deg);
+            transform: rotate(270deg);
+            font-size: 20px;
+            font-weight: bold;
+            right: -100px;
+        }
+
+        aside img{
+            position: absolute;
+            right: -100px;
+        }
+
+
+        @-webkit-keyframes moving_animation{
+            0%{
+                -webkit-transform: translateX(20px) translateY(0px) scale(1);
+            }
+            100%{
+                -webkit-transform: translateX(0px) translateY(0px) scale(1);
+            }
+        }
+
+        #animation{
+            background: none;
+            -webkit-animation-delay: 25ms;
+            -webkit-animation-name: moving_animation;
+            -webkit-animation-duration: 1.5s;
+            -webkit-animation-direction: alternate;
+            -webkit-animation-timing-function: linear;
+            -webkit-animation-iteration-count: infinite;
+        }
+
+
+        footer{
+            position: absolute;
+            margin-left: 10%;
+            bottom: 6%;
+        }
+
+        footer img{
+            height: 30px;
+            width: 30px;
+            margin-right: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="headerLeft"><img src="../img/johnwicklogo.png"/></div>
+        <div id="headerMiddle">
+            <a id="home">HOME</a>
+            <a class="wtor">CHARACTER</a>
+            <a class="wtor">GALLERY</a>
+        </div>
+        <div id="headerRight"><img src="../img/menu.png"/></div>
+    </header>
+
+    <main>
+        <div id="mainLeft">
+            <p><img id="jwLogo" src="../img/johnwicktitle.png"/></p>
+            <p id="chapter">CHAPTER1 - JOHN WICK</p>
+            <p id="details"> I shouldn't have touched him. Revenge against enemies who chose the
+                wrong person!John Wick, a killer<br/> called a legend, retires from the
+                world of crime by meeting his beloved woman and getting married.<br/>
+                Happiness is also briefly delivered as a gift to his wife before she
+                dies. Then one day, unidentified men rush <br/> into his house...</p>
+            <ul>
+                <li><span>Release</span>2015, January 21</li>
+                <li><span>Director</span>Chad Stahelski</li>
+                <li><span>Genre</span>Action, Thriller</li>
+            </ul>
+            <p id="buttons">
+                <button>WATCH</button>
+                <button>READ MORE</button> 
+            </p>
+        </div>
+        <aside>
+            <p id="text">TRAILER</p>
+            <p><img id="animation" src="../img/left-chevron.png"/></p>
+        </aside>
+    </main>
+    <footer>
+        <img src="../img/footer-facebook.png"/>
+        <img src="../img/footer-youtube.png"/>
+        <img src="../img/footer-twitter.png"/>
+    </footer>
+</body>
+</html>
